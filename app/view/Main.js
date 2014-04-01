@@ -16,17 +16,69 @@ Ext.define('Ary.view.Main', {
                 styleHtmlContent: true,
                 scrollable: true,
 
-                items: {
+                /*items: {
                     docked: 'top',
                     xtype: 'titlebar',
-                    title: 'Welcome to Sencha Touch 2'
-                },
+                    title: '한글 문장에서 동사(v)와 주어(s)를 찾아보세요.'
+                },*/
+                
 
-                html: [
-                    "You've just generated a new Sencha Touch 2 project. What you're looking at right now is the ",
-                    "contents of <a target='_blank' href=\"app/view/Main.js\">app/view/Main.js</a> - edit that file ",
-                    "and refresh to change what's rendered here."
-                ].join("")
+                /*html: [
+                    "그는 자기의 방안에 있다."
+                ].join(""),*/
+                
+                items: [{
+                    docked: 'top',
+                    xtype: 'titlebar',
+                    title: '한글 문장에서 동사(v)와 주어(s)를 찾아보세요.'
+                },{
+                    docked: 'top',
+                    xtype: 'titlebar',
+                    title: '그는 자기의 방안에 있다.'
+                },{
+                	xtype: 'textfield',
+                	name: 'verb',
+                	label: '동사',
+                	placeHolder: '',
+                	required: true,
+                	clearIcon: true
+                },{
+                	xtype: 'textfield',
+                	name: 'subject',
+                	label: '주어',
+                	placeHolder: '',
+                	required: true,
+                	clearIcon: true
+                },{
+                	xtype: 'textfield',
+                	name: 'complement',
+                	label: '보어',
+                	placeHolder: '',
+                	required: true,
+                	clearIcon: true
+                },{
+                	xtype: 'textfield',
+                	name: 'object',
+                	label: '목적어',
+                	placeHolder: '',
+                	required: true,
+                	clearIcon: true
+                },{
+                	xtype: 'textfield',
+                	name: 'modifiers',
+                	label: '수식어1',
+                	placeHolder: '',
+                	required: true,
+                	clearIcon: true
+                },{
+                	xtype: 'textfield',
+                	name: 'modifiers',
+                	label: '수식어2',
+                	placeHolder: '',
+                	required: true,
+                	clearIcon: true
+                }]
+
             },
             {
                 title: 'Get Started',
