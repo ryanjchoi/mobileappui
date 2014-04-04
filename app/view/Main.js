@@ -1,7 +1,7 @@
 Ext.define('Ary.view.Main', {
 	extend : 'Ext.tab.Panel',
 	xtype : 'main',
-	requires : [ 'Ext.TitleBar', 'Ext.Video' ],
+	requires : [ 'Ext.TitleBar' ],
 	config : {
 		tabBarPosition : 'bottom',
 
@@ -10,19 +10,38 @@ Ext.define('Ary.view.Main', {
  			iconCls : 'home',
 			styleHtmlContent : true,
 			scrollable : true,
-
+	
 			items : [{
+	            xtype: 'toolbar',
+	            docked: 'top',
+	            title: '한글 문장',
+	            items: [{
+                	xtype: 'button',
+                    hidden: true,
+                    id: 'backButton',
+                    itemId: 'mybutton1',
+                    ui: 'back',
+                    text: 'Back'
+                },{
+                    xtype: 'spacer'
+                },{
+                    xtype: 'button',
+                    itemId: 'addButton',
+                    text: 'Add'
+                }]
+            },{
 				xtype : 'formpanel',
 				height : 352,
 				items : [{
-					docked : 'top',
-					xtype : 'titlebar',
-					title : '한글 문장에서 동사(v)와 주어(s)를 찾아보세요.'
+					xtype : 'container',
+					height : 50,
+					html : '동사(v)와 주어(s)를 찾아보세요.',
+					style : 'text-align: center;',
+					width : '100%'
 				},{
 					xtype : 'container',
-					height : 90,
+					height : 30,
 					html : '그는 자기의 방안에 있다.',
-					margin : '\'0 0 5 0\'',
 					style : 'text-align: center;',
 					width : '100%'
 				},{
@@ -52,38 +71,57 @@ Ext.define('Ary.view.Main', {
 					margin : 10,
 					text : '취소'
 				}]
-			}]
+            }]
 		},{
 			title : '영어 문장',
- 					iconCls : 'action',
+ 			iconCls : 'action',
 			styleHtmlContent : true,
 			scrollable : true,
-
+	
 			items : [{
+	            xtype: 'toolbar',
+	            docked: 'top',
+	            title: '영어 문장',
+	            items: [{
+                    xtype: 'button',
+                    hidden: true,
+                    id: 'backButton',
+                    itemId: 'mybutton1',
+                    ui: 'back',
+                    text: 'Back'
+                },{
+                    xtype: 'spacer'
+                },{
+                    xtype: 'button',
+                    itemId: 'addButton',
+                    text: 'Add'
+                }]
+            },{
 				xtype : 'formpanel',
 				height : 352,
 				items : [{
-					docked : 'top',
-					xtype : 'titlebar',
-					title : '영 문장에서 동사(v)와 주어(s)를 찾아보세요.'
+					xtype : 'container',
+					height : 50,
+					html : '영어 문장에서 동사(v)와 주어(s)를 찾아보세요.',
+					style : 'text-align: center;',
+					width : '100%'
 				},{
 					xtype : 'container',
-					height : 90,
+					height : 30,
 					html : 'He is in his room.',
-					margin : '\'0 0 5 0\'',
 					style : 'text-align: center;',
 					width : '100%'
 				},{
 					xtype : 'textfield',
 					name : 'subject',
-					label : '주어',
+					label : 'Subject',
 					placeHolder : '',
 					required : true,
 					clearIcon : true
 				},{
 					xtype : 'textfield',
 					name : 'verb',
-					label : '동사',
+					label : 'Verb',
 					placeHolder : '',
 					required : true,
 					clearIcon : true
